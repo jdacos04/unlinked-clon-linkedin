@@ -28,7 +28,7 @@ const CustomSidebarMenu = (props) => {
         <DrawerItemList {...props} />
         <DrawerItem
           label={({ color }) => (
-            <Text style={{ color: "#ce1212" }}>Logout</Text>
+            <Text style={{ color: "#ce1213" }}>Logout</Text>
           )}
           onPress={() => {
             props.navigation.toggleDrawer();
