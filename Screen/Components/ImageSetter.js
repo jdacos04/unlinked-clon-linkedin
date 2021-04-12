@@ -49,7 +49,8 @@ export default function ImagePickerExample() {
 
   const handleUploadPhoto = () => {
     const data = image;
-    fetch("https://wunder-backend-movil-app.herokuapp.com/", {
+    //https://unlinkedback.herokuapp.com/api/
+    fetch("//https://unlinkedback.herokuapp.com/api/", {
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data",

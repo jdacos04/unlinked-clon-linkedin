@@ -23,7 +23,7 @@ const Auth = () => {
         options={{
           title: "Register",
           headerStyle: {
-            backgroundColor: "#07A0C3",
+            backgroundColor: "#424642",
           },
           headerTintColor: "#FFF1D0",
           headerTitleStyle: {
@@ -62,3 +62,5 @@ const App = () => {
 };
 
 export default App;
+
+

@@ -1,10 +1,8 @@
-// Example of Splash, Login and Sign Up in React Native
-// https://aboutreact.com/react-native-login-and-signup/
 
 // Import React and Component
 import React from "react";
 import { View, Text, Alert, StyleSheet, Image } from "react-native";
-import logo from "../Components/icon.png";
+import logo from "./icon.png";
 
 import {
   DrawerContentScrollView,
@@ -18,11 +16,11 @@ const CustomSidebarMenu = (props) => {
   return (
     <View style={stylesSidebar.sideMenuContainer}>
       <View style={stylesSidebar.profileHeader}>
-        <View style={stylesSidebar.profileHeaderPicCircle}>
+        <View >
           <Image style={stylesSidebar.profileHeaderPicCircle} source={logo} />
-          <Text style={{ fontSize: 25, color: "#F0C808" }}></Text>
+          <Text style={{ fontSize: 25, color: "#eeeeee" }}></Text>
         </View>
-        <Text style={stylesSidebar.profileHeaderText}>Wunder Note</Text>
+        <Text style={stylesSidebar.profileHeaderText}>UNLINKED</Text>
       </View>
       <View style={stylesSidebar.profileHeaderLine} />
 
@@ -30,7 +28,7 @@ const CustomSidebarMenu = (props) => {
         <DrawerItemList {...props} />
         <DrawerItem
           label={({ color }) => (
-            <Text style={{ color: "#000000" }}>Logout</Text>
+            <Text style={{ color: "#ce1212" }}>Logout</Text>
           )}
           onPress={() => {
             props.navigation.toggleDrawer();
@@ -67,36 +65,36 @@ const stylesSidebar = StyleSheet.create({
   sideMenuContainer: {
     width: "100%",
     height: "100%",
-    backgroundColor: "#086788",
+    backgroundColor: "#222831",
     paddingTop: 40,
     color: "white",
   },
   profileHeader: {
     flexDirection: "row",
-    backgroundColor: "#FFF1D0",
+    backgroundColor: "#222831",
     padding: 15,
     textAlign: "center",
   },
   profileHeaderPicCircle: {
-    width: 60,
-    height: 60,
-    borderRadius: 60 / 2,
-    color: "white",
-    backgroundColor: "#ffffff",
-    textAlign: "center",
+    width: 100,
+    height: 100,
+    borderRadius: 200,
+   
+    backgroundColor: "#7971ea",
+    
     justifyContent: "center",
     alignItems: "center",
   },
   profileHeaderText: {
-    color: "black",
+    color: "#eeeeee",
     alignSelf: "center",
-    paddingHorizontal: 10,
+    paddingHorizontal: 5,
     fontWeight: "bold",
   },
   profileHeaderLine: {
     height: 1,
     marginHorizontal: 20,
-    backgroundColor: "#e2e2e2",
+    backgroundColor: "#eeeeee",
     marginTop: 15,
   },
 });

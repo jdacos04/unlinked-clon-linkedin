@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Wunder App",
+    "name": "UNLIKEND",
     "slug": "i-rlly-dont-know-anymore",
     "version": "0.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/adaptive-icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FFF1D0"
+      "backgroundColor": "#222831"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,8 +21,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#222831"
       },
       "permissions": [
         "CAMERA"

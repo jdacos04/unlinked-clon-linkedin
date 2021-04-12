@@ -10,11 +10,10 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 // Import Screens
 import HomeScreen from "./DrawerScreens/HomeScreen";
-import que from "./DrawerScreens/que";
 import Profile from "./DrawerScreens/Profile";
+import Posts from "./DrawerScreens/Posts"
 import CustomSidebarMenu from "./Components/CustomSidebarMenu";
 import NavigationDrawerHeader from "./Components/NavigationDrawerHeader";
-
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -30,7 +29,7 @@ const homeScreenStack = ({ navigation }) => {
             <NavigationDrawerHeader navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: "#07A0C3",
+            backgroundColor: "#393e46",
           },
           headerTintColor: "#000000",
           headerTitleStyle: {
@@ -42,67 +41,65 @@ const homeScreenStack = ({ navigation }) => {
   );
 };
 
-// const Profile = ({ navigation }) => {
-//   return (
-//     <Stack.Navigator initialRouteName="HomeScreen">
-//       <Stack.Screen
-//         name="Profile"
-//         component={Profile}
-//         options={{
-//           title: "Home",
-//           headerLeft: () => (
-//             <NavigationDrawerHeader navigationProps={navigation} />
-//           ),
-//           headerStyle: {
-//             backgroundColor: "#07A0C3",
-//           },
-//           headerTintColor: "#000000",
-//           headerTitleStyle: {
-//             fontWeight: "bold",
-//           },
-//         }}
-//       />
-//     </Stack.Navigator>
-//   );
-// };
-
-const aypapa = ({ navigation }) => {
+const profileStack = ({ navigation }) => {
   return (
-    <Stack.Navigator
-      initialRouteName="SettingsScreen"
-      screenOptions={{
-        headerLeft: () => (
-          <NavigationDrawerHeader navigationProps={navigation} />
-        ),
-        headerStyle: {
-          backgroundColor: "#07A0C3",
-        },
-        headerTintColor: "#000000",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-      }}
-    >
-      <Stack.Screen
-        name="que"
-        component={que}
+    <Stack.Navigator initialRouteName="HomeScreen">
+            <Stack.Screen
+        name="Profile"
+        component={Profile}
         options={{
-          title: "buenas",
+          title: "Profile",
+          headerLeft: () => (
+            <NavigationDrawerHeader navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: "#393e46",
+          },
+          headerTintColor: "#000000",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
         }}
       />
     </Stack.Navigator>
   );
 };
 
+const postStack = ({ navigation }) => {
+  return (
+    <Stack.Navigator initialRouteName="HomeScreen">
+            <Stack.Screen
+        name="Posts"
+        component={Posts}
+        options={{
+          title: "Posts",
+          headerLeft: () => (
+            <NavigationDrawerHeader navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: "#393e46",
+          },
+          headerTintColor: "#000000",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+
+
 const DrawerNavigatorRoutes = (props) => {
   return (
     <Drawer.Navigator
       drawerContentOptions={{
-        activeTintColor: "#cee1f2",
-        color: "#cee1f2",
-        itemStyle: { marginVertical: 5, color: "white" },
+        activeTintColor: "#eeeeee",
+        color: "#393e46",
+        itemStyle: { marginVertical: 5, color: "#eeeeee" },
         labelStyle: {
-          color: "#000000",
+          color: "#eeeeee",
         },
       }}
       screenOptions={{ headerShown: false }}
@@ -110,18 +107,18 @@ const DrawerNavigatorRoutes = (props) => {
     >
       <Drawer.Screen
         name="homeScreenStack"
-        options={{ drawerLabel: "Home Screen" }}
+        options={{ drawerLabel: "Home " }}
         component={homeScreenStack}
       />
       <Drawer.Screen
         name="Profile"
         options={{ drawerLabel: "Profile" }}
-        component={Profile}
+        component={profileStack}
       />
-      <Drawer.Screen
-        name="Ay Papa"
-        options={{ drawerLabel: "Machurrio" }}
-        component={aypapa}
+            <Drawer.Screen
+        name="Posts"
+        options={{ drawerLabel: "Posts" }}
+        component={postStack}
       />
     </Drawer.Navigator>
   );

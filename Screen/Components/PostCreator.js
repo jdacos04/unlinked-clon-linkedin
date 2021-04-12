@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Loader from "./Loader";
-import asyncToken from "/Users/Damian/wunderapp/mobile/utils/token";
+import asyncToken from "/Users/jdaco/Desktop/unlikend/utils/token";
 
 const NoteCreator = () => {
   const [noteTitle, setNoteTitle] = useState("");
@@ -20,7 +20,7 @@ const NoteCreator = () => {
   const createTwoButtonAlert = () =>
     Alert.alert(
       "Error! :(",
-      "Error al enviar nota...",
+      "Error al crear el post...",
       [{ text: "OK", onPress: () => console.log("OK Pressed") }],
       { cancelable: false }
     );
@@ -28,11 +28,7 @@ const NoteCreator = () => {
   const handleNote = async () => {
     try {
       const token = await asyncToken();
-      if (!noteTitle) {
-        alert("Please title it off.");
-        return;
-      }
-
+      
       setLoading(true);
       let dataToSend = {
         notetitle: noteTitle,
@@ -42,7 +38,7 @@ const NoteCreator = () => {
         notecheck: false,
         notepriority: false,
       };
-      console.log("enviando nota");
+      console.log("enviando ");
       let formBody = [];
       for (let key in dataToSend) {
         let encodedKey = encodeURIComponent(key);
@@ -84,14 +80,7 @@ const NoteCreator = () => {
   return (
     <SafeAreaView>
       <Loader loading={loading} />
-      <View style={styles.NoteName}>
-        <TextInput
-          placeholder="Title..."
-          style={styles.TitleSize}
-          onChangeText={(text) => setNoteTitle(text)}
-          value={noteTitle}
-        ></TextInput>
-      </View>
+     
       <View style={styles.NoteContent}>
         <TextInput
           placeholder="Write it off..."
@@ -101,11 +90,27 @@ const NoteCreator = () => {
           value={noteContent}
         ></TextInput>
       </View>
+      <View
+      flexDirection= 'row'
+      justifyContent= 'space-between'>
+        
       <Button
-        title="Agregar Nota"
+        title="Create a post "
         onPress={handleNote}
-        color="#07A0C3"
+        color="#222831"
+       
+        
       ></Button>
+      <Button
+      
+        title="     Upload file    "
+        onPress={handleNote}
+        color="#7971ea"
+       
+        
+      ></Button>
+      
+      </View>
     </SafeAreaView>
   );
 };

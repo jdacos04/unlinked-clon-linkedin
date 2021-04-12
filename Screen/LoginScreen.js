@@ -45,8 +45,10 @@ const LoginScreen = ({ navigation }) => {
       formBody.push(encodedKey + "=" + encodedValue);
     }
     formBody = formBody.join("&");
-    //https://wunder-backend-movil-app.herokuapp.com/login
-    fetch("http://localhost:6969/api/login", {
+    //http://localhost:6969/api/login
+    //https://unlinkedback.herokuapp.com/api/
+    
+    fetch("https://unlinkedback.herokuapp.com/api/login", {
       method: "POST",
       body: formBody,
       headers: {
@@ -83,15 +85,16 @@ const LoginScreen = ({ navigation }) => {
         }}
       >
         <View>
-          <KeyboardAvoidingView enabled>
+          <KeyboardAvoidingView enabled  > 
             <View style={{ alignItems: "center" }}>
               <Image
-                source={require("../Image/wunderapp.png")}
+                source={require("../Image/logo.png")}
                 style={{
                   width: "50%",
-                  height: 100,
+                  height: 200,
                   resizeMode: "contain",
                   margin: 30,
+                  borderRadius:100
                 }}
               />
             </View>
@@ -154,7 +157,7 @@ const styles = StyleSheet.create({
   mainBody: {
     flex: 1,
     justifyContent: "center",
-    backgroundColor: "#FFF1D0",
+    backgroundColor: "#f3f4ed",
     alignContent: "center",
   },
   SectionStyle: {
@@ -166,10 +169,10 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: "#000000",
+    backgroundColor: "#7971ea",
     borderWidth: 0,
     color: "#FFFFFF",
-    borderColor: "#DD1C1A",
+    borderColor: "#7971ea",
     height: 40,
     alignItems: "center",
     borderRadius: 30,
@@ -190,7 +193,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     borderWidth: 1,
     borderRadius: 30,
-    borderColor: "#07A0C3",
+    borderColor: "#7971ea",
   },
   registerTextStyle: {
     color: "#000000",
@@ -201,7 +204,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   errorTextStyle: {
-    color: "DD1C1A",
+    color: "#dd1c1a",
     textAlign: "center",
     fontSize: 14,
   },

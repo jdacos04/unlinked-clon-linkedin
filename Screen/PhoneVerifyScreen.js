@@ -35,8 +35,9 @@ const PhoneVerifyScreen = (props) => {
     }
 
     formBody = formBody.join("&");
-
-    fetch("http://localhost:6969/api/verify", {
+    //http://localhost:6969/api/verify
+    //https://unlinkedback.herokuapp.com/api/
+    fetch("https://unlinkedback.herokuapp.com/api/verify", {
       method: "POST",
       body: formBody,
       headers: {
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
     borderColor: "#07A0C3",
   },
   errorTextStyle: {
-    color: "DD1C1A",
+    color: "#DD1C1A",
     textAlign: "center",
     fontSize: 14,
   },

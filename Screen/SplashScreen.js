@@ -10,7 +10,9 @@ const SplashScreen = ({ navigation }) => {
       try {
         const token = await asyncToken();
         if (token !== null) {
-          fetch("http://localhost:6969/api", {
+          //http://localhost:6969/api
+          //https://unlinkedback.herokuapp.com/api/
+          fetch("https://unlinkedback.herokuapp.com/api/", {
             method: "POST",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
@@ -41,12 +43,12 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../Image/wunderapp.png")}
-        style={{ width: "90%", resizeMode: "contain", margin: 30 }}
+        source={require("../Image/logo2.png")}
+        style={{ width: "100%", resizeMode: "contain", margin: 30 }}
       />
       <ActivityIndicator
         animating={animating}
-        color="#000000"
+        color="#393e46"
         size="large"
         style={styles.activityIndicator}
       />
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FFF1D0",
+    backgroundColor: "#222831",
   },
   activityIndicator: {
     alignItems: "center",

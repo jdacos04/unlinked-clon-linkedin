@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, SafeAreaView, Button, Pressable } from "react-native";
+import { View, Text, SafeAreaView, Button, Pressable,  } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import NoteCreator from "../Components/NoteCreator";
-import asyncToken from "/Users/Damian/wunderapp/mobile/utils/token";
+import PostCreator from "../Components/PostCreator";
+import asyncToken from "/Users/jdaco/Desktop/unlikend/utils/token";
+import {PostView} from "../Components/PostView"
 
 const HomeScreen = () => {
   const [notes, setNotes] = useState(null);
@@ -20,6 +21,7 @@ const HomeScreen = () => {
         //direccion de heroku /users/notes
         console.log("se esta ejecutando el fetch");
         // fetch(
+          ////https://unlinkedback.herokuapp.com/api/
         //   "https://wunder-backend-movil-app.herokuapp.com/users/notes/getall",
         //   {
         //     method: "GET",
@@ -50,18 +52,20 @@ const HomeScreen = () => {
 
   if (newNote) {
     return (
+      
       <View
         style={{
           flex: 1,
-          backgroundColor: "#FFF1D0",
+          backgroundColor: "#eeeeee",
           justifyContent: "center",
         }}
       >
-        <NoteCreator />
-        <Button color="#086788" title="Done" onPress={handleNoteButton}>
-          Done
+        <PostCreator />
+        <Button color="#ce1212" title="Done" onPress={handleNoteButton}>
+          Exit
         </Button>
       </View>
+     
     );
   }
 
@@ -71,7 +75,7 @@ const HomeScreen = () => {
   // ));
 
   return (
-    <SafeAreaView style={{ backgroundColor: "#FFF1D0", flex: 1 }}>
+    <SafeAreaView style={{ backgroundColor: "#eeeeee", flex: 1 }}>
       <View style={{ flex: 1, padding: 16 }}>
         {notes && (
           <View>
@@ -89,12 +93,15 @@ const HomeScreen = () => {
             flex: 1,
             justifyContent: "center",
           }}
-          color="#07A0C3"
+          color="#7971ea"
           title="Crear Nota"
           onPress={handleNoteButton}
         ></Button>
       </View>
+   
+      
     </SafeAreaView>
+   
   );
 };
 

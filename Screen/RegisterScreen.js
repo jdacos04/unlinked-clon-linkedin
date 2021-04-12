@@ -66,8 +66,9 @@ const RegisterScreen = ({ navigation }) => {
     }
 
     formBody = formBody.join("&");
-
-    fetch("http://localhost:6969/api/create", {
+    //http://localhost:6969/api/create
+      //https://unlinkedback.herokuapp.com/api/create
+    fetch("https://unlinkedback.herokuapp.com/api/create", {
       method: "POST",
       body: formBody,
       headers: {
@@ -95,7 +96,7 @@ const RegisterScreen = ({ navigation }) => {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#FFF1D0" }}>
+    <View style={{ flex: 1, backgroundColor: "#eeeeee" }}>
       <Loader loading={loading} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
@@ -106,21 +107,23 @@ const RegisterScreen = ({ navigation }) => {
       >
         <View style={{ alignItems: "center" }}>
           <Image
-            source={require("../Image/wunderapp.png")}
+            source={require("../Image/logo.png")}
             style={{
               width: "50%",
-              height: 100,
+              height: 125,
               resizeMode: "contain",
               margin: 30,
+              borderRadius:150
             }}
           />
         </View>
-        <KeyboardAvoidingView enabled>
+        <KeyboardAvoidingView  enabled   backgroundColor="#393e46"
+        >
           <View style={styles.SectionStyle}>
             <TextInput
               style={styles.inputStyle}
               onChangeText={(UserEmail) => setUserEmail(UserEmail)}
-              underlineColorAndroid="#000000"
+              
               placeholder="Enter Email"
               placeholderTextColor="#000000"
               keyboardType="email-address"
@@ -136,7 +139,6 @@ const RegisterScreen = ({ navigation }) => {
               style={styles.inputStyle}
               secureTextEntry={true}
               onChangeText={(password) => setPassword(password)}
-              underlineColorAndroid="#000000"
               placeholder="Enter your secret password"
               placeholderTextColor="#000000"
               ref={passwordRef}
@@ -152,7 +154,7 @@ const RegisterScreen = ({ navigation }) => {
               style={styles.inputStyle}
               secureTextEntry={true}
               onChangeText={(passwordCheck) => setPasswordCheck(passwordCheck)}
-              underlineColorAndroid="#000000"
+              
               placeholder="Enter your secret password"
               placeholderTextColor="#000000"
               ref={passwordRef}
@@ -167,7 +169,7 @@ const RegisterScreen = ({ navigation }) => {
             <TextInput
               style={styles.inputStyle}
               onChangeText={(name) => setName(name)}
-              underlineColorAndroid="#000000"
+              
               placeholder="Enter your Full Name."
               placeholderTextColor="#000000"
               autoCapitalize="sentences"
@@ -181,7 +183,7 @@ const RegisterScreen = ({ navigation }) => {
               style={styles.inputStyle}
               onChangeText={(phone) => setPhone(phone)}
               keyboardType="decimal-pad"
-              underlineColorAndroid="#000000"
+             
               placeholder="Enter your Phone Number"
               placeholderTextColor="#000000"
               autoCapitalize="sentences"
@@ -217,7 +219,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: "#DD1C1A",
+    backgroundColor: "#7971ea",
     borderWidth: 0,
     color: "#FFFFFF",
     borderColor: "#DD1C1A",
@@ -241,10 +243,10 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     borderWidth: 1,
     borderRadius: 30,
-    borderColor: "#07A0C3",
+    borderColor: "#7971ea",
   },
   errorTextStyle: {
-    color: "DD1C1A",
+    color: "#DD1C1A",
     textAlign: "center",
     fontSize: 14,
   },
