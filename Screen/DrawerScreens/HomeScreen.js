@@ -94,7 +94,7 @@ const HomeScreen = () => {
             justifyContent: "center",
           }}
           color="#7971ea"
-          title="Crear Nota"
+          title="Crear Post "
           onPress={handleNoteButton}
         ></Button>
       </View>
