@@ -11,7 +11,6 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 // Import Screens
 import HomeScreen from "./DrawerScreens/HomeScreen";
 import Profile from "./DrawerScreens/Profile";
-import Posts from "./DrawerScreens/Posts";
 import CustomSidebarMenu from "./Components/CustomSidebarMenu";
 import NavigationDrawerHeader from "./Components/NavigationDrawerHeader";
 import Connects from "./DrawerScreens/Connects";
@@ -50,30 +49,6 @@ const profileStack = ({ navigation }) => {
         component={Profile}
         options={{
           title: "Profile",
-          headerLeft: () => (
-            <NavigationDrawerHeader navigationProps={navigation} />
-          ),
-          headerStyle: {
-            backgroundColor: "#393e46",
-          },
-          headerTintColor: "#000000",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-        }}
-      />
-    </Stack.Navigator>
-  );
-};
-
-const postStack = ({ navigation }) => {
-  return (
-    <Stack.Navigator initialRouteName="HomeScreen">
-      <Stack.Screen
-        name="Posts"
-        component={Posts}
-        options={{
-          title: "Posts",
           headerLeft: () => (
             <NavigationDrawerHeader navigationProps={navigation} />
           ),
@@ -137,11 +112,6 @@ const DrawerNavigatorRoutes = (props) => {
         name="Profile"
         options={{ drawerLabel: "Profile" }}
         component={profileStack}
-      />
-      <Drawer.Screen
-        name="Posts"
-        options={{ drawerLabel: "Posts" }}
-        component={postStack}
       />
       <Drawer.Screen
         name="Connects"
