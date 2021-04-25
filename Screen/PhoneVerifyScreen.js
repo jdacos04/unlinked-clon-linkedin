@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: "#DD1C1A",
+    backgroundColor: "#7971ea",
     borderWidth: 0,
     color: "#FFFFFF",
     borderColor: "#DD1C1A",
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     borderWidth: 1,
     borderRadius: 30,
-    borderColor: "#07A0C3",
+    borderColor: "#7971ea",
   },
   errorTextStyle: {
     color: "#DD1C1A",
