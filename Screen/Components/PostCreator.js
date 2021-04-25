@@ -10,12 +10,20 @@ import {
 } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Loader from "./Loader";
-import asyncToken from "/Users/jdaco/Desktop/unlikend/utils/token";
+import asyncToken from "../../utils/token";
 
-const NoteCreator = () => {
-  const [noteTitle, setNoteTitle] = useState("");
-  const [noteContent, setNoteContent] = useState("");
+const PostCreator = () => {
   const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState(null);
+  const [text, setText] = useState("");
+
+  const createOkTwoButtonAlert = () =>
+    Alert.alert(
+      "Error! :(",
+      "Error al crear el post...",
+      [{ text: "OK", onPress: () => console.log("OK Pressed") }],
+      { cancelable: false }
+    );
 
   const createTwoButtonAlert = () =>
     Alert.alert(
@@ -25,18 +33,15 @@ const NoteCreator = () => {
       { cancelable: false }
     );
 
-  const handleNote = async () => {
+  const handlePost = async () => {
+
+    setLoading(true);
     try {
       const token = await asyncToken();
-      
+
       setLoading(true);
       let dataToSend = {
-        notetitle: noteTitle,
-        notetext: noteContent,
-        notedate: "2021-01-01",
-        notetimeleft: "2021-01-01",
-        notecheck: false,
-        notepriority: false,
+        postText: text,
       };
       console.log("enviando ");
       let formBody = [];
@@ -48,22 +53,22 @@ const NoteCreator = () => {
       formBody = formBody.join("&");
 
       console.log(token);
-      //https://wunder-backend-movil-app.herokuapp.com/createnote
-      fetch(
-        "https://wunder-backend-movil-app.herokuapp.com/users/notes/create",
-        {
-          method: "POST",
-          body: formBody,
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-            Authorization: "Bearer " + token,
-          },
-        }
-      )
+      //http://localhost:6969/
+
+      //https://wunder-backend-movil-app.herokuapp.com/createPost
+      fetch("http://localhost:6969/api/posts/create", {
+        method: "POST",
+        body: formBody,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          Authorization: "Bearer " + token,
+        },
+      })
         .then((response) => {
           setLoading(false);
           console.log(response);
           if (response.status == 200) {
+            createOkTwoButtonAlert();
             console.log("algo tiene que decir que salio bien");
           } else {
             createTwoButtonAlert();
@@ -80,51 +85,44 @@ const NoteCreator = () => {
   return (
     <SafeAreaView>
       <Loader loading={loading} />
-     
-      <View style={styles.NoteContent}>
+
+      <View style={styles.PostContent}>
         <TextInput
-          placeholder="Write it off..."
-          style={styles.NoteSize}
-          multiline
-          onChangeText={(text) => setNoteContent(text)}
-          value={noteContent}
+          placeholder="De que me gusta vestirme?"
+          style={styles.PostSize}
+          multiline={true}
+          onChangeText={(text) => setText(text)}
         ></TextInput>
       </View>
-      <View
-      flexDirection= 'row'
-      justifyContent= 'space-between'>
-        
-      <Button
-        title="Create a post "
-        onPress={handleNote}
-        color="#222831"
-       
-        
-      ></Button>
-      <Button
+      <View flexDirection="row" justifyContent="space-between">
+        <Button
+          title="Add it up!"
+          onPress={handlePost}
+          color="#222831"
+        ></Button>
+        {/* <Button
       
         title="     Upload file    "
-        onPress={handleNote}
+        onPress={handlePost}
         color="#7971ea"
        
         
-      ></Button>
-      
+      ></Button> */}
       </View>
     </SafeAreaView>
   );
 };
 
-export default NoteCreator;
+export default PostCreator;
 
 const styles = StyleSheet.create({
-  NoteName: {
+  PostName: {
     backgroundColor: "white",
     borderRadius: 20,
     padding: 5,
     margin: 5,
   },
-  NoteContent: {
+  PostContent: {
     backgroundColor: "white",
     borderRadius: 10,
     justifyContent: "center",
@@ -133,7 +131,7 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 5,
   },
-  NoteSize: {
+  PostSize: {
     fontSize: 25,
   },
   TitleSize: {

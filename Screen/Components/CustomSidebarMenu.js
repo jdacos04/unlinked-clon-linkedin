@@ -2,7 +2,7 @@
 // Import React and Component
 import React from "react";
 import { View, Text, Alert, StyleSheet, Image } from "react-native";
-import logo from "./icon.png";
+import logo from "../../assets/icon.png";
 
 import {
   DrawerContentScrollView,

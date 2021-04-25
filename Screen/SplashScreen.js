@@ -12,7 +12,7 @@ const SplashScreen = ({ navigation }) => {
         if (token !== null) {
           //http://localhost:6969/api
           //https://unlinkedback.herokuapp.com/api/
-          fetch("https://unlinkedback.herokuapp.com/api/", {
+          fetch("http://localhost:6969/api", {
             method: "POST",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",

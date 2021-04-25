@@ -48,7 +48,7 @@ const LoginScreen = ({ navigation }) => {
     //http://localhost:6969/api/login
     //https://unlinkedback.herokuapp.com/api/
     
-    fetch("https://unlinkedback.herokuapp.com/api/login", {
+    fetch("http://localhost:6969/api/login", {
       method: "POST",
       body: formBody,
       headers: {

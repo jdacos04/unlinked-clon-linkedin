@@ -11,9 +11,10 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 // Import Screens
 import HomeScreen from "./DrawerScreens/HomeScreen";
 import Profile from "./DrawerScreens/Profile";
-import Posts from "./DrawerScreens/Posts"
+import Posts from "./DrawerScreens/Posts";
 import CustomSidebarMenu from "./Components/CustomSidebarMenu";
 import NavigationDrawerHeader from "./Components/NavigationDrawerHeader";
+import Connects from "./DrawerScreens/Connects";
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -44,7 +45,7 @@ const homeScreenStack = ({ navigation }) => {
 const profileStack = ({ navigation }) => {
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
-            <Stack.Screen
+      <Stack.Screen
         name="Profile"
         component={Profile}
         options={{
@@ -68,7 +69,7 @@ const profileStack = ({ navigation }) => {
 const postStack = ({ navigation }) => {
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
-            <Stack.Screen
+      <Stack.Screen
         name="Posts"
         component={Posts}
         options={{
@@ -89,7 +90,29 @@ const postStack = ({ navigation }) => {
   );
 };
 
-
+const connectsStack = ({ navigation }) => {
+  return (
+    <Stack.Navigator initialRouteName="HomeScreen">
+      <Stack.Screen
+        name="Connects"
+        component={Connects}
+        options={{
+          title: "Connects",
+          headerLeft: () => (
+            <NavigationDrawerHeader navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: "#393e46",
+          },
+          headerTintColor: "#000000",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const DrawerNavigatorRoutes = (props) => {
   return (
@@ -115,10 +138,15 @@ const DrawerNavigatorRoutes = (props) => {
         options={{ drawerLabel: "Profile" }}
         component={profileStack}
       />
-            <Drawer.Screen
+      <Drawer.Screen
         name="Posts"
         options={{ drawerLabel: "Posts" }}
         component={postStack}
+      />
+      <Drawer.Screen
+        name="Connects"
+        options={{ drawerLabel: "Connects" }}
+        component={connectsStack}
       />
     </Drawer.Navigator>
   );

@@ -68,7 +68,7 @@ const RegisterScreen = ({ navigation }) => {
     formBody = formBody.join("&");
     //http://localhost:6969/api/create
       //https://unlinkedback.herokuapp.com/api/create
-    fetch("https://unlinkedback.herokuapp.com/api/create", {
+    fetch("http://localhost:6969/api/create", {
       method: "POST",
       body: formBody,
       headers: {

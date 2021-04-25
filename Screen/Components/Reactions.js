@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Button,
   Pressable,
+  TouchableOpacity,
   StyleSheet,
   Alert,
 } from "react-native";
@@ -13,108 +14,50 @@ import Emoji from "../Components/Emoji"
 
 
 
-const Reactions = ( ) => {
-  const [reaccion, setReaccion] = useState("")
+const Reactions = ({ variant} ) => {
+  const [react, setReact] = useState();
+
+  const addReact = (num) => {
+    // fetch("http://localhost:6969/api/verify", {
+    //   method: "POST",
+    //   body: formBody,
+    //   headers: {
+    //     "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+    //   },
+    // })
+    //   .then((response) => {
+    //     setLoading(false);
+    //     console.log(response.status);
+    //     if (response.status == 200) {
+    //       setLoading(false);
+    //       setIsRegistraionSuccess(true);
+    //       console.log("Database check succesfull, doing phone verification");
+    //     } else {
+    //       setLoading(false);
+    //       setErrortext("Registration Unsuccessful");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     setLoading(false);
+    //     console.error(error);
+    //   });
+  }
  
  return(
-     <SafeAreaView>
-         
-     {/* <View>
-    <Button
-        title="Happy"
-        onClick = {setReaccion(1)}
-        color="#"
-      />
-      </View>
-      <View>
-    <Button
-        title="Sad"
-        onClick = {setReaccion(2)}
-        color="#"
-      />
-      </View>
-      
-      <View>
-    <Button
-        title="Amazed"
-        onClick = {setReaccion(3)}
-        color="#"
-      />
-      </View>
-      
-      <View>
-    <Button
-        title="Thougtful"
-        onClick = {setReaccion(4)}
-        color="#"
-      />
-      </View>
-      
-      <View>
-    <Button
-        title="love"
-        onClick = {setReaccion(5)}
-        color="#"
-      />
-      </View>
-      
-      <View>
-    <Button
-        title="Iguana"
-        onClick = {setReaccion(6)}
-        color="#"
-      />
-      </View> */}
-
-         {/* <TouchableOpacity
-         
-          onClick={setReaccion(1)}
-        >
-            <Emoji symbol="❤️" label="heart"/>
-         
-        </TouchableOpacity>
-        <TouchableOpacity
-          
-          onClick={setReaccion(2)}
-        >
-            <Emoji symbol="😔" label="sad"/>
-        
-        </TouchableOpacity>
-        <TouchableOpacity
-          
-          onClick={setReaccion(2)}
-        >
-            <Emoji symbol="😃" label="smiley"/>
-        
-        </TouchableOpacity>
-        
-        <TouchableOpacity
-          
-          onClick={setReaccion(2)}
-        >
-            <Emoji symbol="🤔" label="hmm"/>
-        
-        </TouchableOpacity>
-        
-        <TouchableOpacity
-         
-          onClick={setReaccion(2)}
-        >
-        <Emoji symbol="🤭" label="amazed"/>
-        
-        </TouchableOpacity>
-
-
-        <TouchableOpacity
-          
-          onClick={setReaccion(2)}
-        >
-        <Emoji symbol="🦎" label="iguana"/>
-        </TouchableOpacity>
-         */}
+  <View>
+                <Button
+          style={{
+            flex: 1,
+            justifyContent: "center",
+          }}
+          color="#7971ea"
+          title="Crear Post "
+          onPress={addReact(1)}
+        ></Button>
+  </View>
         
       
 
-     </SafeAreaView>
 )
 }
+export default Reactions

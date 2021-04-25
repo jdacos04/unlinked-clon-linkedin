@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "UNLIKEND",
+    "name": "UNLINKED",
     "slug": "i-rlly-dont-know-anymore",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "orientation": "portrait",
     "icon": "./assets/adaptive-icon.png",
     "splash": {

@@ -6,7 +6,7 @@ const Loader = (props) => {
 
   return (
     <Modal
-      transparent={true}
+      transparent={false  }
       animationType={"slide"}
       visible={loading}
       onRequestClose={() => {
