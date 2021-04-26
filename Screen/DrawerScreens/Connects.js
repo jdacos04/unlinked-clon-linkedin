@@ -40,7 +40,7 @@ const Connects = () => {
       }
       formBody = formBody.join("&");
 
-      await fetch("http://localhost:6969/api/connect/search", {
+      await fetch("https://unlinkedback.herokuapp.com/api/connect/search", {
         method: "POST",
         body: formBody,
         headers: {

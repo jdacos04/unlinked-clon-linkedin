@@ -47,8 +47,8 @@ const LoginScreen = ({ navigation }) => {
     formBody = formBody.join("&");
     //http://localhost:6969/api/login
     //https://unlinkedback.herokuapp.com/api/
-    
-    fetch("http://localhost:6969/api/login", {
+
+    fetch("https://unlinkedback.herokuapp.com/api/login", {
       method: "POST",
       body: formBody,
       headers: {
@@ -85,7 +85,7 @@ const LoginScreen = ({ navigation }) => {
         }}
       >
         <View>
-          <KeyboardAvoidingView enabled  > 
+          <KeyboardAvoidingView enabled>
             <View style={{ alignItems: "center" }}>
               <Image
                 source={require("../Image/logo.png")}
@@ -94,7 +94,7 @@ const LoginScreen = ({ navigation }) => {
                   height: 200,
                   resizeMode: "contain",
                   margin: 30,
-                  borderRadius:100
+                  borderRadius: 100,
                 }}
               />
             </View>

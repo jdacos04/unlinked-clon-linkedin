@@ -37,7 +37,7 @@ const PhoneVerifyScreen = (props) => {
     formBody = formBody.join("&");
     //http://localhost:6969/api/verify
     //https://unlinkedback.herokuapp.com/api/
-    fetch("http://localhost:6969/api/verify", {
+    fetch("https://unlinkedback.herokuapp.com/api/verify", {
       method: "POST",
       body: formBody,
       headers: {

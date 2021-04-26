@@ -67,7 +67,7 @@ const EditProfile = () => {
       //http://localhost:6969/
 
       //https://wunder-backend-movil-app.herokuapp.com/createPost
-      fetch("http://localhost:6969/api/modify", {
+      fetch("https://unlinkedback.herokuapp.com/api/modify", {
         method: "POST",
         body: formBody,
         headers: {

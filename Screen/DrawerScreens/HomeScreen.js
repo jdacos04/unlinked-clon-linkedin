@@ -35,8 +35,8 @@ const HomeScreen = () => {
       <View style={{ flex: 1, padding: 16 }}>
         <PostFeed />
         <Text>
-          Aqui va un componente personalizado que debe cargar datos del array y
-          debe ser presionable para editar las notas.
+          Aqui esta un componente personalizado que debe cargar datos del array
+          con los posts pero aja yo mejor me meto a salserin.
         </Text>
         <Button
           style={{

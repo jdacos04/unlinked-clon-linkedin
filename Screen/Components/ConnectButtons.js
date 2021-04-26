@@ -26,7 +26,7 @@ const ConnectButtons = (props) => {
     }
 
     formBody = formBody.join("&");
-    fetch("http://localhost:6969/api/connect/accept", {
+    fetch("https://unlinkedback.herokuapp.com/api/connect/accept", {
       method: "POST",
       body: formBody,
       headers: {
@@ -60,7 +60,7 @@ const ConnectButtons = (props) => {
     }
 
     formBody = formBody.join("&");
-    fetch("http://localhost:6969/api/connect/add", {
+    fetch("https://unlinkedback.herokuapp.com/api/connect/add", {
       method: "POST",
       body: formBody,
       headers: {
@@ -93,7 +93,7 @@ const ConnectButtons = (props) => {
     }
 
     formBody = formBody.join("&");
-    fetch("http://localhost:6969/api/connect/block", {
+    fetch("https://unlinkedback.herokuapp.com/api/connect/block", {
       method: "POST",
       body: formBody,
       headers: {

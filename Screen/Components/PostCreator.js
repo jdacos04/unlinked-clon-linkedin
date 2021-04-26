@@ -34,7 +34,6 @@ const PostCreator = () => {
     );
 
   const handlePost = async () => {
-
     setLoading(true);
     try {
       const token = await asyncToken();
@@ -56,7 +55,7 @@ const PostCreator = () => {
       //http://localhost:6969/
 
       //https://wunder-backend-movil-app.herokuapp.com/createPost
-      fetch("http://localhost:6969/api/posts/create", {
+      fetch("https://unlinkedback.herokuapp.com/api/posts/create", {
         method: "POST",
         body: formBody,
         headers: {

@@ -67,8 +67,8 @@ const RegisterScreen = ({ navigation }) => {
 
     formBody = formBody.join("&");
     //http://localhost:6969/api/create
-      //https://unlinkedback.herokuapp.com/api/create
-    fetch("http://localhost:6969/api/create", {
+    //https://unlinkedback.herokuapp.com/api/create
+    fetch("https://unlinkedback.herokuapp.com/api/create", {
       method: "POST",
       body: formBody,
       headers: {
@@ -113,17 +113,15 @@ const RegisterScreen = ({ navigation }) => {
               height: 125,
               resizeMode: "contain",
               margin: 30,
-              borderRadius:150
+              borderRadius: 150,
             }}
           />
         </View>
-        <KeyboardAvoidingView  enabled   backgroundColor="#393e46"
-        >
+        <KeyboardAvoidingView enabled backgroundColor="#393e46">
           <View style={styles.SectionStyle}>
             <TextInput
               style={styles.inputStyle}
               onChangeText={(UserEmail) => setUserEmail(UserEmail)}
-              
               placeholder="Enter Email"
               placeholderTextColor="#000000"
               keyboardType="email-address"
@@ -154,7 +152,6 @@ const RegisterScreen = ({ navigation }) => {
               style={styles.inputStyle}
               secureTextEntry={true}
               onChangeText={(passwordCheck) => setPasswordCheck(passwordCheck)}
-              
               placeholder="Enter your secret password"
               placeholderTextColor="#000000"
               ref={passwordRef}
@@ -169,7 +166,6 @@ const RegisterScreen = ({ navigation }) => {
             <TextInput
               style={styles.inputStyle}
               onChangeText={(name) => setName(name)}
-              
               placeholder="Enter your Full Name."
               placeholderTextColor="#000000"
               autoCapitalize="sentences"
@@ -183,7 +179,6 @@ const RegisterScreen = ({ navigation }) => {
               style={styles.inputStyle}
               onChangeText={(phone) => setPhone(phone)}
               keyboardType="decimal-pad"
-             
               placeholder="Enter your Phone Number"
               placeholderTextColor="#000000"
               autoCapitalize="sentences"

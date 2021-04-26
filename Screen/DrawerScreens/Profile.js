@@ -36,7 +36,7 @@ const Profile = () => {
         //http://localhost:6969/
         //https://wunder-backend-movil-app.herokuapp.com/createPost
 
-        await fetch("http://localhost:6969/api/get", {
+        await fetch("https://unlinkedback.herokuapp.com/api/get", {
           method: "POST",
 
           headers: {
